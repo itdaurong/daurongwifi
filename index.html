@@ -2,81 +2,127 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đánh giá để truy cập WiFi miễn phí</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kết nối WiFi miễn phí - Đánh giá ngay</title>
+
   <style>
-    body {
-      background: linear-gradient(135deg, #f2f2f2, #e0e0e0);
-      font-family: 'Arial', sans-serif;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    :root {
+      --primary-color: #ff6f00;
+      --secondary-color: #ffffff;
+      --text-color: #333333;
+      --button-hover: #e65100;
+    }
+    * {
       margin: 0;
-      text-align: center;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #ececec);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
     }
     .container {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 500px;
+      background: var(--secondary-color);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
       text-align: center;
+      width: 100%;
+      max-width: 400px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeSlideIn 1s forwards ease-out;
     }
-    h2 {
-      font-size: 28px;
-      color: #4CAF50;
-      margin-bottom: 20px;
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .logo {
+      max-width: 160px;
+      margin-bottom: 25px;
+      animation: zoomIn 1s ease forwards;
+    }
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    h1 {
+      font-size: 26px;
+      color: var(--primary-color);
+      margin-bottom: 15px;
     }
     p {
-      font-size: 18px;
-      margin-bottom: 30px;
+      font-size: 17px;
       color: #666;
+      margin-bottom: 30px;
+      line-height: 1.5;
     }
-    .button {
-      background-color: #FF9800;
+    .cta-button {
+      background: var(--primary-color);
       color: white;
-      padding: 15px 30px;
+      padding: 14px 28px;
       font-size: 18px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      transition: background-color 0.3s;
+      transition: background 0.3s ease;
+      animation: bounce 2s infinite;
     }
-    .button:hover {
-      background-color: #ff5722;
+    .cta-button:hover {
+      background: var(--button-hover);
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); 
+      }
+      40% {
+        transform: translateY(-8px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
     }
     .footer {
-      font-size: 14px;
-      color: #999;
-      margin-top: 20px;
-    }
-    .logo {
-      max-width: 200px;
-      margin-bottom: 20px;
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 25px;
     }
   </style>
 </head>
+
 <body>
+
   <div class="container">
-    <!-- <img src="logo.png" alt="Logo của bạn" class="logo"> -->
+    <!-- <img src="logo.png" alt="Logo doanh nghiệp" class="logo"> -->
 
-    <h2>🎉 WiFi miễn phí đang chờ bạn!</h2>
-    <p>Vui lòng để lại đánh giá 5⭐ trên Google để sử dụng mạng WiFi của chúng tôi.</p>
+    <h1>Truy cập WiFi miễn phí 🎉</h1>
 
-    <!-- Thay đổi: dùng thẻ <a> trực tiếp thay vì button onclick -->
-    <a href="https://maps.app.goo.gl/v7VLkxo7YmVLe7My7" class="button" target="_blank" rel="noopener noreferrer">
-      👉 Đánh giá Google Maps
+    <p>Hãy để lại đánh giá 5⭐ tại Google Maps để mở khoá WiFi hoàn toàn miễn phí. Chúng tôi rất trân trọng ý kiến của bạn!</p>
+
+    <a href="https://maps.app.goo.gl/v7VLkxo7YmVLe7My7" target="_blank" rel="noopener noreferrer" class="cta-button">
+      👉 Đánh giá ngay
     </a>
 
     <div class="footer">
-      <p>Chúng tôi đánh giá cao ý kiến của bạn!</p>
-      <p>Đánh giá giúp chúng tôi cải thiện dịch vụ tốt hơn.</p>
     </div>
   </div>
+
 </body>
 </html>
